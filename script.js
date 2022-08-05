@@ -4,12 +4,15 @@ const navHambClose = document.querySelector('.nav-hamb-close');
 
 // --------------FUNÇÕES------------------
 function escondeNavHamb() {
-  console.log(navHamburguer);
-  navHamburguer.style.display = "none"
+  navHamburguer.style.animation = "nav-hamburguer-out .5s 1";
+  setTimeout(()=>{
+    navHamburguer.style.display = "none";
+  }, 500);
 }
 
 function mostraNavHamb() {
-  navHamburguer.style.display = "block"
+  navHamburguer.style.display = "block";
+  navHamburguer.style.animation = "nav-hamburguer-in .5s 1";
 }
 
 

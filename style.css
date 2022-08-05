@@ -47,6 +47,27 @@ header {
   height: 100vh;
   width: 80%;
   background-color: #3C0000;
+  animation: nav-hamburguer-out .5s 1;
+}
+
+@keyframes nav-hamburguer-in {
+  0% {
+    opacity: 0%;
+    right: -100%
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes nav-hamburguer-out {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+    right: -100%
+  }
 }
 
 .nav-hamb-close {
