@@ -4,6 +4,12 @@
   padding: 0;
 }
 
+/*
+Font families
+font-family: 'Lato', sans-serif;
+font-family: 'Merriweather', serif;
+*/
+
 /* ---------------HEADER--------------- */
 header {
   background-color: #3C0000;
@@ -64,6 +70,7 @@ header {
   margin-right: 2rem;
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
+  font-family: 'Lato', sans-serif;
 }
 
 .nav-hamb-li a {
