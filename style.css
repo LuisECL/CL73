@@ -116,10 +116,10 @@ header {
   align-items: center;
   height: 100%;
   width: 100%;
-  background-image: url("img/carrossel/01-coleta.jpg");
   background-position: center;
   background-size: cover;
   color: #fff;
+  transition: all 0.3;
 }
 
 .carr-item-text-container {
@@ -133,7 +133,7 @@ header {
 }
 
 .carrossel-item h2 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 2px rgb(0, 0, 0, .75);
 }
@@ -141,6 +141,7 @@ header {
 .carrossel-item h3 {
   font-size: 2rem;
   margin-bottom: 2rem;
+  padding: 1rem;
   text-shadow: 2px 2px 2px rgb(0, 0, 0, .75);
   text-align: center;
 }
