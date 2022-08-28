@@ -7,31 +7,49 @@ const carrItemTextArray = document.querySelector(
 ).children;
 const carrosselData = {
   item01: {
-    bg: "01.colheita.jpg",
+    bg: "01.colheita-2000w.jpg",
     titulo: "Colheita",
     subtitulo: "Do campo à sua casa",
   },
   item02: {
-    bg: "02.processamento.jpg",
+    bg: "02.processamento-2000w.jpg",
     titulo: "Separação",
     subtitulo: "Os melhores grãos para o melhor café",
   },
   item03: {
-    bg: "03.industria.jpg",
+    bg: "03.industria-2000w.jpg",
     titulo: "Fermentação",
     subtitulo: "Tecnología em favor da qualidade",
   },
   item04: {
-    bg: "04.transporte.jpg",
+    bg: "04.transporte-2000w.jpg",
     titulo: "Transporte",
     subtitulo: "Atingindo todos os cantos do Brasil",
   },
   item05: {
-    bg: "05.produto.jpg",
+    bg: "05.produto-2000w.jpg",
     titulo: "Apresentação",
     subtitulo: "Puro ou com leite, você que escolhe",
   },
 };
+
+const screenWidth = window.screen.width;
+
+if(screenWidth <= 400){
+  for (let key in carrosselData){
+    let route = carrosselData[key].bg;
+    let newRoute = route.replace("-2000w.jpg", "-400w.png");
+    carrosselData[key].bg = newRoute;
+  }
+} else if (screenWidth <= 850){
+  for (let key in carrosselData){
+    let route = carrosselData[key].bg;
+    let newRoute = route.replace("-2000w.jpg", "-800w.png");
+    carrosselData[key].bg = newRoute;
+  }
+}
+
+console.log(carrosselData);
 
 // --------------FUNÇÕES------------------
 function escondeNavHamb() {
