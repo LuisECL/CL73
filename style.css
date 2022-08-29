@@ -108,9 +108,11 @@ header {
   height: 400px;
   width: 100%;
   background-color: aliceblue;
+  position: relative;
 }
 
 .carrossel-item {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -159,6 +161,10 @@ header {
 .carrossel-item button:hover {
   background: rgb(0, 0, 0, .6);
   cursor: pointer;
+}
+
+#carr-item02, #carr-item03, #carr-item04, #carr-item05 {
+  display: none;
 }
 
 /* ---------------SOBRE NÓS--------------- */

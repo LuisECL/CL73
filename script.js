@@ -1,51 +1,44 @@
 const navHamburguer = document.querySelector(".nav-hamburguer");
 const btnHamburguer = document.querySelector(".btn-hamburguer");
 const navHambClose = document.querySelector(".nav-hamb-close");
-const carrosselItem = document.querySelector(".carrossel-item");
-const carrItemTextArray = document.querySelector(
-  ".carr-item-text-container"
-).children;
+const carrosselItems = document.querySelectorAll(".carrossel-item");
 const carrosselData = {
   item01: {
-    bg: "01.colheita-2000w.jpg",
-    titulo: "Colheita",
-    subtitulo: "Do campo à sua casa",
+    bg: "01.colheita-2000w.jpg"
   },
   item02: {
-    bg: "02.processamento-2000w.jpg",
-    titulo: "Separação",
-    subtitulo: "Os melhores grãos para o melhor café",
+    bg: "02.processamento-2000w.jpg"
   },
   item03: {
-    bg: "03.industria-2000w.jpg",
-    titulo: "Fermentação",
-    subtitulo: "Tecnología em favor da qualidade",
+    bg: "03.industria-2000w.jpg"
   },
   item04: {
-    bg: "04.transporte-2000w.jpg",
-    titulo: "Transporte",
-    subtitulo: "Atingindo todos os cantos do Brasil",
+    bg: "04.transporte-2000w.jpg"
   },
   item05: {
-    bg: "05.produto-2000w.jpg",
-    titulo: "Apresentação",
-    subtitulo: "Puro ou com leite, você que escolhe",
-  },
+    bg: "05.produto-2000w.jpg"
+  }
 };
 
 const screenWidth = window.screen.width;
-
 if(screenWidth <= 400){
-  for (let key in carrosselData){
-    let route = carrosselData[key].bg;
-    let newRoute = route.replace("-2000w.jpg", "-400w.png");
-    carrosselData[key].bg = newRoute;
+  for(let i=1; i<=carrosselItems.length; i++){
+    let rota = carrosselData["item0"+i].bg;
+    let newRota = rota.replace("-2000w.jpg", "-400w.png");
+    carrosselData["item0"+i].bg = newRota;
+    aplicaBg(i, newRota);
   }
 } else if (screenWidth <= 850){
-  for (let key in carrosselData){
-    let route = carrosselData[key].bg;
-    let newRoute = route.replace("-2000w.jpg", "-800w.png");
-    carrosselData[key].bg = newRoute;
+  for(let i=1; i<=carrosselItems.length; i++){
+    let rota = carrosselData["item0"+i].bg;
+    let newRota = rota.replace("-2000w.jpg", "-800w.png");
+    carrosselData["item0"+i].bg = newRota;
+    aplicaBg(i, newRota);
+  }
+} else {
+  for(let i=1; i<=carrosselItems.length; i++){
+    let rota = carrosselData["item0"+i].bg;
+    aplicaBg(i, rota);
   }
 }
 
@@ -60,6 +53,10 @@ function escondeNavHamb() {
 function mostraNavHamb() {
   navHamburguer.style.display = "block";
   navHamburguer.style.animation = "nav-hamburguer-in .5s 1";
+}
+
+function aplicaBg(i, rota){
+  carrosselItems[(i-1)].style.backgroundImage = `url(img/carrossel/${rota})`;
 }
 
 // function alternaCarrossel(item) {
