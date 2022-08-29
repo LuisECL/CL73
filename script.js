@@ -59,46 +59,35 @@ function aplicaBg(i, rota) {
   carrosselItems[i - 1].style.backgroundImage = `url(img/carrossel/${rota})`;
 }
 
-function alternaCarrossel() {
-  let i = 2;
+function fadeInCarrossel(item) {
+  carrosselItems[item].style.display = "flex";
+  carrosselItems[item].style.animation = "carrossel-fade-in 2s 1";
+  return item + 1;
+}
+
+function fadeOutCarrossel() {
+  carrosselItems[3].style.display = "none";
+  carrosselItems[2].style.display = "none";
+  carrosselItems[1].style.display = "none";
+  carrosselItems[4].style.animation = "carrossel-fade-out 2s 1";
+  setTimeout(() => {
+    carrosselItems[4].style.display = "none";
+  }, 1500);
+  return 1
+}
+
+function alternaCarrossel(proxItem) {
+  let i = proxItem;
   setInterval(() => {
     if (i == 5) {
-      carrosselItems[3].style.display = "none";
-      carrosselItems[2].style.display = "none";
-      carrosselItems[1].style.display = "none";
-      carrosselItems[4].style.animation = "carrossel-fade-out 2s 1";
-      setTimeout(()=> {
-        carrosselItems[4].style.display = "none";
-      }, 1500)
-      i = 1;
+      i = fadeOutCarrossel();
     } else {
-      carrosselItems[i].style.display = "flex";
-      carrosselItems[i].style.animation = "carrossel-fade-in 2s 1";
-      i++;
+      i = fadeInCarrossel(i);
     }
   }, 5000);
 }
 
-alternaCarrossel();
-
-// function alternaCarrossel(item) {
-//   carrosselItem.style.backgroundImage = `url(img/carrossel/${item.bg})`;
-//   carrItemTextArray[0].innerHTML = item.titulo;
-//   carrItemTextArray[1].innerHTML = item.subtitulo;
-// }
-
-// alternaCarrossel(carrosselData.item01);
-// let count = 2;
-// const esperaParaAlternar = setInterval(() => {
-//   if(count > 5){
-//     count = 1
-//   }
-//   console.log(`Agora vai o item0${count}`);
-//   let itemAtual = `item0${count}`
-//   alternaCarrossel(carrosselData[itemAtual])
-//   ++count
-// }, 5000);
-// clearInterval(esperaParaAlternar);
+alternaCarrossel(2);
 
 // --------------EVENTOS------------------
 btnHamburguer.addEventListener("click", () => {
