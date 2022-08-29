@@ -167,6 +167,19 @@ header {
   display: none;
 }
 
+@keyframes carrossel-fade-in {
+  0% {
+    opacity: 0%
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+/* #carr-item02 {
+  animation: carrossel-fade-in 2s 1;
+} */
+
 /* ---------------SOBRE NÓS--------------- */
 
 /* ---------------TABELA--------------- */
