@@ -49,8 +49,6 @@ if(screenWidth <= 400){
   }
 }
 
-console.log(carrosselData);
-
 // --------------FUNÇÕES------------------
 function escondeNavHamb() {
   navHamburguer.style.animation = "nav-hamburguer-out .5s 1";
@@ -81,7 +79,7 @@ const esperaParaAlternar = setInterval(() => {
   alternaCarrossel(carrosselData[itemAtual])
   ++count
 }, 5000);
-// clearInterval(esperaParaAlternar);
+clearInterval(esperaParaAlternar);
 
 // --------------EVENTOS------------------
 btnHamburguer.addEventListener("click", () => {
