@@ -4,40 +4,40 @@ const navHambClose = document.querySelector(".nav-hamb-close");
 const carrosselItems = document.querySelectorAll(".carrossel-item");
 const carrosselData = {
   item01: {
-    bg: "01.colheita-2000w.jpg"
+    bg: "01.colheita-2000w.jpg",
   },
   item02: {
-    bg: "02.processamento-2000w.jpg"
+    bg: "02.processamento-2000w.jpg",
   },
   item03: {
-    bg: "03.industria-2000w.jpg"
+    bg: "03.industria-2000w.jpg",
   },
   item04: {
-    bg: "04.transporte-2000w.jpg"
+    bg: "04.transporte-2000w.jpg",
   },
   item05: {
-    bg: "05.produto-2000w.jpg"
-  }
+    bg: "05.produto-2000w.jpg",
+  },
 };
 
 const screenWidth = window.screen.width;
-if(screenWidth <= 400){
-  for(let i=1; i<=carrosselItems.length; i++){
-    let rota = carrosselData["item0"+i].bg;
+if (screenWidth <= 400) {
+  for (let i = 1; i <= carrosselItems.length; i++) {
+    let rota = carrosselData["item0" + i].bg;
     let newRota = rota.replace("-2000w.jpg", "-400w.png");
-    carrosselData["item0"+i].bg = newRota;
+    carrosselData["item0" + i].bg = newRota;
     aplicaBg(i, newRota);
   }
-} else if (screenWidth <= 850){
-  for(let i=1; i<=carrosselItems.length; i++){
-    let rota = carrosselData["item0"+i].bg;
+} else if (screenWidth <= 850) {
+  for (let i = 1; i <= carrosselItems.length; i++) {
+    let rota = carrosselData["item0" + i].bg;
     let newRota = rota.replace("-2000w.jpg", "-800w.png");
-    carrosselData["item0"+i].bg = newRota;
+    carrosselData["item0" + i].bg = newRota;
     aplicaBg(i, newRota);
   }
 } else {
-  for(let i=1; i<=carrosselItems.length; i++){
-    let rota = carrosselData["item0"+i].bg;
+  for (let i = 1; i <= carrosselItems.length; i++) {
+    let rota = carrosselData["item0" + i].bg;
     aplicaBg(i, rota);
   }
 }
@@ -55,9 +55,31 @@ function mostraNavHamb() {
   navHamburguer.style.animation = "nav-hamburguer-in .5s 1";
 }
 
-function aplicaBg(i, rota){
-  carrosselItems[(i-1)].style.backgroundImage = `url(img/carrossel/${rota})`;
+function aplicaBg(i, rota) {
+  carrosselItems[i - 1].style.backgroundImage = `url(img/carrossel/${rota})`;
 }
+
+function alternaCarrossel() {
+  let i = 2;
+  setInterval(() => {
+    if (i == 5) {
+      carrosselItems[3].style.display = "none";
+      carrosselItems[2].style.display = "none";
+      carrosselItems[1].style.display = "none";
+      carrosselItems[4].style.animation = "carrossel-fade-out 2s 1";
+      setTimeout(()=> {
+        carrosselItems[4].style.display = "none";
+      }, 1500)
+      i = 1;
+    } else {
+      carrosselItems[i].style.display = "flex";
+      carrosselItems[i].style.animation = "carrossel-fade-in 2s 1";
+      i++;
+    }
+  }, 5000);
+}
+
+alternaCarrossel();
 
 // function alternaCarrossel(item) {
 //   carrosselItem.style.backgroundImage = `url(img/carrossel/${item.bg})`;

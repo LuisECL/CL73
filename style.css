@@ -176,9 +176,14 @@ header {
   }
 }
 
-/* #carr-item02 {
-  animation: carrossel-fade-in 2s 1;
-} */
+@keyframes carrossel-fade-out {
+  0% {
+    opacity: 100%
+  }
+  100% {
+    opacity: 0%;
+  }
+}
 
 /* ---------------SOBRE NÓS--------------- */
 
