@@ -62,24 +62,24 @@ function mostraNavHamb() {
   navHamburguer.style.animation = "nav-hamburguer-in .5s 1";
 }
 
-function alternaCarrossel(item) {
-  carrosselItem.style.backgroundImage = `url(img/carrossel/${item.bg})`;
-  carrItemTextArray[0].innerHTML = item.titulo;
-  carrItemTextArray[1].innerHTML = item.subtitulo;
-}
+// function alternaCarrossel(item) {
+//   carrosselItem.style.backgroundImage = `url(img/carrossel/${item.bg})`;
+//   carrItemTextArray[0].innerHTML = item.titulo;
+//   carrItemTextArray[1].innerHTML = item.subtitulo;
+// }
 
-alternaCarrossel(carrosselData.item01);
-let count = 2;
-const esperaParaAlternar = setInterval(() => {
-  if(count > 5){
-    count = 1
-  }
-  console.log(`Agora vai o item0${count}`);
-  let itemAtual = `item0${count}`
-  alternaCarrossel(carrosselData[itemAtual])
-  ++count
-}, 5000);
-clearInterval(esperaParaAlternar);
+// alternaCarrossel(carrosselData.item01);
+// let count = 2;
+// const esperaParaAlternar = setInterval(() => {
+//   if(count > 5){
+//     count = 1
+//   }
+//   console.log(`Agora vai o item0${count}`);
+//   let itemAtual = `item0${count}`
+//   alternaCarrossel(carrosselData[itemAtual])
+//   ++count
+// }, 5000);
+// clearInterval(esperaParaAlternar);
 
 // --------------EVENTOS------------------
 btnHamburguer.addEventListener("click", () => {
