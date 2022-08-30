@@ -107,7 +107,6 @@ header {
 .carrossel-container {
   height: 400px;
   width: 100%;
-  background-color: aliceblue;
   position: relative;
 }
 
@@ -163,6 +162,10 @@ header {
   cursor: pointer;
 }
 
+#carr-item01, #carr-item02, #carr-item03, #carr-item04, #carr-item05 {
+  z-index: -1;
+}
+
 #carr-item02, #carr-item03, #carr-item04, #carr-item05 {
   display: none;
 }
@@ -183,6 +186,32 @@ header {
   100% {
     opacity: 0%;
   }
+}
+
+.carrossel-btn-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: 24px;
+}
+
+.carrossel-btn-container li {
+  list-style-type: none;
+}
+
+.carrossel-btn-container button {
+  width: clamp(40px, 8vw, 100px);
+  height: 8px;
+  margin: 0 4px;
+  border: none;
+  background-color: rgba(255,255,255,.3);
+}
+
+.carrossel-btn-container .btn-ativo {
+  background-color: rgba(255,255,255,.8);
 }
 
 /* ---------------SOBRE NÓS--------------- */

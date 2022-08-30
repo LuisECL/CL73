@@ -2,6 +2,8 @@ const navHamburguer = document.querySelector(".nav-hamburguer");
 const btnHamburguer = document.querySelector(".btn-hamburguer");
 const navHambClose = document.querySelector(".nav-hamb-close");
 const carrosselItems = document.querySelectorAll(".carrossel-item");
+const carrosselBtns = document.querySelectorAll(".carrossel-btn button")
+console.log(carrosselBtns);
 const carrosselData = {
   item01: {
     bg: "01.colheita-2000w.jpg",
@@ -63,13 +65,17 @@ function fadeInCarrossel(item) {
   if (item === 5){
     fadeOutCarrossel();
   } else if(item === 0){
+    carrosselBtns[0].classList.toggle("btn-ativo")
     setTimeout(()=> {
       fadeInCarrossel((item+1))
+      carrosselBtns[0].classList.toggle("btn-ativo")
     }, 5000)
   } else {
+    carrosselBtns[item].classList.toggle("btn-ativo")
     carrosselItems[item].style.display = "flex";
     carrosselItems[item].style.animation = "carrossel-fade-in 2s 1";
     setTimeout(()=> {
+      carrosselBtns[item].classList.toggle("btn-ativo")
       fadeInCarrossel((item+1));
     }, 5000)
   }
