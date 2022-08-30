@@ -60,9 +60,19 @@ function aplicaBg(i, rota) {
 }
 
 function fadeInCarrossel(item) {
-  carrosselItems[item].style.display = "flex";
-  carrosselItems[item].style.animation = "carrossel-fade-in 2s 1";
-  return item + 1;
+  if (item === 5){
+    fadeOutCarrossel();
+  } else if(item === 0){
+    setTimeout(()=> {
+      fadeInCarrossel((item+1))
+    }, 5000)
+  } else {
+    carrosselItems[item].style.display = "flex";
+    carrosselItems[item].style.animation = "carrossel-fade-in 2s 1";
+    setTimeout(()=> {
+      fadeInCarrossel((item+1));
+    }, 5000)
+  }
 }
 
 function fadeOutCarrossel() {
@@ -73,21 +83,10 @@ function fadeOutCarrossel() {
   setTimeout(() => {
     carrosselItems[4].style.display = "none";
   }, 1500);
-  return 1
+  fadeInCarrossel(0);
 }
 
-function alternaCarrossel(proxItem) {
-  let i = proxItem;
-  setInterval(() => {
-    if (i == 5) {
-      i = fadeOutCarrossel();
-    } else {
-      i = fadeInCarrossel(i);
-    }
-  }, 5000);
-}
-
-alternaCarrossel(2);
+fadeInCarrossel(0);
 
 // --------------EVENTOS------------------
 btnHamburguer.addEventListener("click", () => {
