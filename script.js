@@ -60,37 +60,37 @@ function mostraNavHamb() {
 }
 
 function fadeInCarrossel(item) {
-  if (item === 5) {
-    fadeOutCarrossel();
-  } else if (item === 0) {
-    carrosselBtns[0].classList.toggle("btn-ativo");
-    setTimeout(() => {
-      fadeInCarrossel(item + 1);
-      carrosselBtns[0].classList.toggle("btn-ativo");
-    }, 5000);
-  } else {
-    carrosselBtns[item].classList.toggle("btn-ativo");
-    carrosselItems[item].style.display = "flex";
-    carrosselItems[item].style.animation = "carrossel-fade-in 2s 1";
-    setTimeout(() => {
-      carrosselBtns[item].classList.toggle("btn-ativo");
-      fadeInCarrossel(item + 1);
-    }, 5000);
-  }
+  // if (item === 5) {
+  //   fadeOutCarrossel();
+  // } else if (item === 0) {
+  //   carrosselBtns[0].classList.toggle("btn-ativo");
+  //   setTimeout(() => {
+  //     fadeInCarrossel(item + 1);
+  //     carrosselBtns[0].classList.toggle("btn-ativo");
+  //   }, 5000);
+  // } else {
+  //   carrosselBtns[item].classList.toggle("btn-ativo");
+  //   carrosselItems[item].style.display = "flex";
+  //   carrosselItems[item].style.animation = "carrossel-fade-in 2s 1";
+  //   setTimeout(() => {
+  //     carrosselBtns[item].classList.toggle("btn-ativo");
+  //     fadeInCarrossel(item + 1);
+  //   }, 5000);
+  // }
 }
 
 function fadeOutCarrossel() {
-  carrosselItems[3].style.display = "none";
-  carrosselItems[2].style.display = "none";
-  carrosselItems[1].style.display = "none";
-  carrosselItems[4].style.animation = "carrossel-fade-out 2s 1";
-  setTimeout(() => {
-    carrosselItems[4].style.display = "none";
-  }, 1500);
-  fadeInCarrossel(0);
+  // carrosselItems[3].style.display = "none";
+  // carrosselItems[2].style.display = "none";
+  // carrosselItems[1].style.display = "none";
+  // carrosselItems[4].style.animation = "carrossel-fade-out 2s 1";
+  // setTimeout(() => {
+  //   carrosselItems[4].style.display = "none";
+  // }, 1500);
+  // fadeInCarrossel(0);
 }
 
-fadeInCarrossel(0);
+// fadeInCarrossel(0);
 
 // --------------EVENTOS------------------
 btnHamburguer.addEventListener("click", () => {
