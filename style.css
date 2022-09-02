@@ -255,6 +255,55 @@ header {
 }
 
 /* ---------------TABELA--------------- */
+.tabela-container {
+  margin: 1rem;
+  border: solid 1px #334E58;
+}
+
+#btn-tabela-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-tabela {
+  border: none;
+  padding: 8px;
+  background-color: #334E58;
+  color: #D2D7Df;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.btn-tabela-ativo {
+  background-color: #fff;
+  color: #334E58;
+}
+
+.tabela-info {
+  display: none;
+  padding: 1rem;
+  color: #334E58;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2rem;
+}
+
+.tabela-info-ativa {
+  display: block;
+}
+
+.tabela-ul {
+  display: none;
+  padding: 1rem;
+  padding-top: 0;
+  margin-left: 1.5rem;
+  color: #334E58;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2rem;
+}
+
+.tabela-ul-ativa {
+  display: block;
+}
 
 /* -------------COMENTÁRIOS------------- */
 

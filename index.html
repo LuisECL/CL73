@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/a7717bed62.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato&family=Merriweather&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Merriweather&display=swap" rel="stylesheet">
   <title>Café Lime 73</title>
   <script src="script.js" defer></script>
 </head>
@@ -109,23 +109,25 @@
     </button>
   </div>
   <div class="tabela-container">
-    <button class="btn-tabela01">
-      Fornecedores
-    </button>
-    <button class="btn-tabela02">
-      Clientes
-    </button>
-    <button class="btn-tabela03">
-      Prêmios
-    </button>
-    <p class="tabela-info01">
+    <div id="btn-tabela-container">
+      <button class="btn-tabela btn-tabela-ativo">
+        Fornecedores
+      </button>
+      <button class="btn-tabela">
+        Clientes
+      </button>
+      <button class="btn-tabela">
+        Prêmios
+      </button>
+    </div>
+    <p class="tabela-info tabela-info-ativa">
       Info sobre os fornecedores Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non deleniti laboriosam sit
       neque nam provident omnis eaque quibusdam, reiciendis tempore.
     </p>
-    <p class="tabela-info02">
+    <p class="tabela-info">
       Alguns dos nossos clientes Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quia ipsa assumenda.
       Fugiat, cumque ut.
-    <ul>
+    <ul class="tabela-ul">
       <li>Fornecedor 01</li>
       <li>Fornecedor 02</li>
       <li>Fornecedor 03</li>
@@ -133,7 +135,7 @@
       <li>Fornecedor 05</li>
     </ul>
     </p>
-    <p class="tabela-info03">
+    <p class="tabela-info">
       Todos os prêmios que já ganhamos Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat modi quam minus
       nostrum quas nulla corrupti ipsam et consequuntur quaerat dolorum atque, veritatis illo totam repudiandae
       accusantium in, quod illum.
