@@ -59,38 +59,80 @@ function mostraNavHamb() {
   navHamburguer.style.animation = "nav-hamburguer-in .5s 1";
 }
 
-function fadeInCarrossel(item) {
-  // if (item === 5) {
-  //   fadeOutCarrossel();
-  // } else if (item === 0) {
-  //   carrosselBtns[0].classList.toggle("btn-ativo");
-  //   setTimeout(() => {
-  //     fadeInCarrossel(item + 1);
-  //     carrosselBtns[0].classList.toggle("btn-ativo");
-  //   }, 5000);
-  // } else {
-  //   carrosselBtns[item].classList.toggle("btn-ativo");
-  //   carrosselItems[item].style.display = "flex";
-  //   carrosselItems[item].style.animation = "carrossel-fade-in 2s 1";
-  //   setTimeout(() => {
-  //     carrosselBtns[item].classList.toggle("btn-ativo");
-  //     fadeInCarrossel(item + 1);
-  //   }, 5000);
-  // }
+let carrItemAtual = 0;
+let carrItemProx = 1;
+
+function limpaBtnsCarrossel(target){
+  for (let i = 0; i < carrosselBtns.length; i++){
+    if (i == target){
+      continue
+    }
+    carrosselBtns[i].classList.remove("btn-ativo");
+  }
 }
 
-function fadeOutCarrossel() {
-  // carrosselItems[3].style.display = "none";
-  // carrosselItems[2].style.display = "none";
-  // carrosselItems[1].style.display = "none";
-  // carrosselItems[4].style.animation = "carrossel-fade-out 2s 1";
-  // setTimeout(() => {
-  //   carrosselItems[4].style.display = "none";
-  // }, 1500);
-  // fadeInCarrossel(0);
+function limpaBgsCarrosselIn(excecao){
+  for (let i = 0; i < carrosselItems.length; i++){
+    if (i == excecao){
+      continue
+    } else {
+      setTimeout(()=> {
+        carrosselItems[i].style.display = "none";
+      }, 2000)
+    }
+  }
 }
 
-// fadeInCarrossel(0);
+function limpaBgsCarrosselOut(excecao){
+  for (let i = 0; i < carrosselItems.length; i++){
+    if (i == excecao){
+      continue
+    } else {
+      carrosselItems[i].style.display = "none";
+    }
+  }
+}
+
+function fadeInCarrossel(target) {
+  console.log(`Item atual: ${carrItemAtual}\n Item seguinte: ${carrItemProx}`);
+  limpaBtnsCarrossel(target);
+  carrosselBtns[target].classList.add("btn-ativo")
+  carrosselItems[target].style.display = "flex";
+  carrosselItems[target].style.animation = "carrossel-fade-in 2s 1";
+  limpaBgsCarrosselIn(target);
+  carrItemAtual = target;
+
+  setTimeout(()=> {
+    if (target === 4) {
+      carrItemProx = 0;
+      fadeOutCarrossel(carrItemProx);
+      setTimeout(()=> {
+        carrItemProx = 1;
+        fadeInCarrossel(carrItemProx);
+      }, 3000)
+    } else {
+      carrItemProx = target + 1;
+      fadeInCarrossel(carrItemProx);
+    }
+  }, 3000)
+}
+
+function fadeOutCarrossel(target) {
+  console.log(`Item atual: ${carrItemAtual}\n Item seguinte: ${carrItemProx}`);
+  limpaBtnsCarrossel(target);
+  carrosselBtns[target].classList.add("btn-ativo");
+  limpaBgsCarrosselOut(carrItemAtual);
+  carrosselItems[target].style.display = "flex";
+  carrosselItems[carrItemAtual].style.animation = "carrossel-fade-out 2s 1";
+  setTimeout(()=> {
+    carrosselItems[carrItemAtual].style.display = "none";
+    carrItemAtual = target;
+  }, 1800);
+}
+
+setTimeout(()=> {
+  fadeInCarrossel(1);
+}, 3000)
 
 // --------------EVENTOS------------------
 btnHamburguer.addEventListener("click", () => {
@@ -100,3 +142,19 @@ btnHamburguer.addEventListener("click", () => {
 navHambClose.addEventListener("click", () => {
   escondeNavHamb();
 });
+
+// ------------- Botões do Carrossel -----------------
+// for (let i = 0; i < carrosselBtns.length; i++) {
+//   carrosselBtns[i].addEventListener("click", ()=> {
+//     carrItemProx = i;
+//     if (carrItemProx > carrItemAtual){
+//       console.log(`Avança ao item ${carrItemProx}`);
+//       fadeInCarrossel(carrItemProx);
+//     } else if (carrItemProx < carrItemAtual){
+//       console.log(`Volta ao item ${carrItemProx}`);
+//       fadeOutCarrossel(carrItemProx);
+//     } else {
+//       return
+//     }
+//   })
+// }
