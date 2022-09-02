@@ -62,31 +62,31 @@ function mostraNavHamb() {
 let carrItemAtual = 0;
 let carrItemProx = 1;
 
-function limpaBtnsCarrossel(target){
-  for (let i = 0; i < carrosselBtns.length; i++){
-    if (i == target){
-      continue
+function limpaBtnsCarrossel(target) {
+  for (let i = 0; i < carrosselBtns.length; i++) {
+    if (i == target) {
+      continue;
     }
     carrosselBtns[i].classList.remove("btn-ativo");
   }
 }
 
-function limpaBgsCarrosselIn(excecao){
-  for (let i = 0; i < carrosselItems.length; i++){
-    if (i == excecao){
-      continue
+function limpaBgsCarrosselIn(excecao) {
+  for (let i = 0; i < carrosselItems.length; i++) {
+    if (i == excecao) {
+      continue;
     } else {
-      setTimeout(()=> {
+      setTimeout(() => {
         carrosselItems[i].style.display = "none";
-      }, 2000)
+      }, 2000);
     }
   }
 }
 
-function limpaBgsCarrosselOut(excecao){
-  for (let i = 0; i < carrosselItems.length; i++){
-    if (i == excecao){
-      continue
+function limpaBgsCarrosselOut(excecao) {
+  for (let i = 0; i < carrosselItems.length; i++) {
+    if (i == excecao) {
+      continue;
     } else {
       carrosselItems[i].style.display = "none";
     }
@@ -96,25 +96,27 @@ function limpaBgsCarrosselOut(excecao){
 function fadeInCarrossel(target) {
   console.log(`Item atual: ${carrItemAtual}\n Item seguinte: ${carrItemProx}`);
   limpaBtnsCarrossel(target);
-  carrosselBtns[target].classList.add("btn-ativo")
+  carrosselBtns[target].classList.add("btn-ativo");
   carrosselItems[target].style.display = "flex";
   carrosselItems[target].style.animation = "carrossel-fade-in 2s 1";
   limpaBgsCarrosselIn(target);
   carrItemAtual = target;
 
-  setTimeout(()=> {
-    if (target === 4) {
-      carrItemProx = 0;
+  if (target >= 4) {
+    carrItemProx = 0;
+    setTimeout(()=> {
       fadeOutCarrossel(carrItemProx);
-      setTimeout(()=> {
+      setTimeout(() => {
         carrItemProx = 1;
         fadeInCarrossel(carrItemProx);
-      }, 3000)
-    } else {
-      carrItemProx = target + 1;
+      }, 3000);
+    }, 5000)
+  } else {
+    carrItemProx = carrItemAtual + 1;
+    setTimeout(()=> {
       fadeInCarrossel(carrItemProx);
-    }
-  }, 3000)
+    }, 5000)
+  }
 }
 
 function fadeOutCarrossel(target) {
@@ -124,15 +126,16 @@ function fadeOutCarrossel(target) {
   limpaBgsCarrosselOut(carrItemAtual);
   carrosselItems[target].style.display = "flex";
   carrosselItems[carrItemAtual].style.animation = "carrossel-fade-out 2s 1";
-  setTimeout(()=> {
+  setTimeout(() => {
     carrosselItems[carrItemAtual].style.display = "none";
     carrItemAtual = target;
+    carrItemProx = carrItemAtual + 1;
   }, 1800);
 }
 
-setTimeout(()=> {
+setTimeout(() => {
   fadeInCarrossel(1);
-}, 3000)
+}, 5000);
 
 // --------------EVENTOS------------------
 btnHamburguer.addEventListener("click", () => {
@@ -145,16 +148,16 @@ navHambClose.addEventListener("click", () => {
 
 // ------------- Botões do Carrossel -----------------
 // for (let i = 0; i < carrosselBtns.length; i++) {
-//   carrosselBtns[i].addEventListener("click", ()=> {
+//   carrosselBtns[i].addEventListener("click", () => {
 //     carrItemProx = i;
-//     if (carrItemProx > carrItemAtual){
+//     if (carrItemProx > carrItemAtual) {
 //       console.log(`Avança ao item ${carrItemProx}`);
 //       fadeInCarrossel(carrItemProx);
-//     } else if (carrItemProx < carrItemAtual){
+//     } else if (carrItemProx < carrItemAtual) {
 //       console.log(`Volta ao item ${carrItemProx}`);
 //       fadeOutCarrossel(carrItemProx);
 //     } else {
-//       return
+//       return;
 //     }
-//   })
+//   });
 // }
