@@ -217,6 +217,42 @@ header {
 }
 
 /* ---------------SOBRE NÓS--------------- */
+.sobre-nos-container {
+  padding: 2rem 1rem;
+  font-family: 'Lato', sans-serif;
+  color: #334E58;
+}
+
+.sobre-nos-container h2 {
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+
+.sobre-nos-container p {
+  margin: 1rem 0;
+  max-height: 60px;
+  overflow: hidden;
+  transition: max-height .5s ease-in-out;
+}
+
+.sobre-nos-container p:hover {
+  max-height: 100px;
+}
+
+.sobre-nos-container button {
+  width: 200px;
+  height: 48px;
+  border: none;
+  background-color: #334E58;
+  color: #D2D7Df;
+  font-size: 1.5rem;
+  transition: all 0.3s;
+}
+
+.sobre-nos-container button:hover {
+  background-color: #10262e;
+  cursor: pointer;
+}
 
 /* ---------------TABELA--------------- */
 
