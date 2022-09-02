@@ -21,7 +21,7 @@ const carrosselData = {
   },
 };
 const sobreNosTexto = document.querySelector(".sobre-nos-container p");
-const sobreNosBtn = document.querySelector(".sobre-nos-container button");
+const sobreNosBtn = document.querySelector(".ler-mais");
 
 function aplicaBg(i, rota) {
   carrosselItems[i - 1].style.backgroundImage = `url(img/carrossel/${rota})`;
@@ -140,8 +140,14 @@ setTimeout(() => {
 }, 5000);
 
 function toggleSobreNos(){
-  console.log("Clickou no botão");
   sobreNosTexto.classList.toggle("sobre-nos-texto-ativo");
+
+  let textBtn = sobreNosBtn.innerText;
+  if (textBtn == "Ler mais"){
+    sobreNosBtn.innerText = "Ler menos";
+  } else {
+    sobreNosBtn.innerText = "Ler mais";
+  }
 }
 
 // --------------EVENTOS------------------
@@ -169,7 +175,6 @@ navHambClose.addEventListener("click", () => {
 //   });
 // }
 
-console.log(sobreNosTexto);
 sobreNosBtn.addEventListener("click", ()=> {
   toggleSobreNos();
 })
