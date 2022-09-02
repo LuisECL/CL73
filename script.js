@@ -22,7 +22,11 @@ const carrosselData = {
 };
 const sobreNosTexto = document.querySelector(".sobre-nos-container p");
 const sobreNosBtn = document.querySelector(".ler-mais");
+const tabelaBtns = document.querySelectorAll(".btn-tabela");
+const tabelaTextos = document.querySelectorAll(".tabela-info")
+const tabelaUl = document.querySelector(".tabela-ul");
 
+// --------------FUNÇÕES------------------
 function aplicaBg(i, rota) {
   carrosselItems[i - 1].style.backgroundImage = `url(img/carrossel/${rota})`;
 }
@@ -48,7 +52,6 @@ if (screenWidth <= 400) {
   }
 }
 
-// --------------FUNÇÕES------------------
 function escondeNavHamb() {
   navHamburguer.style.animation = "nav-hamburguer-out .5s 1";
   setTimeout(() => {
@@ -96,7 +99,7 @@ function limpaBgsCarrosselOut(excecao) {
 }
 
 function fadeInCarrossel(target) {
-  console.log(`Item atual: ${carrItemAtual}\n Item seguinte: ${carrItemProx}`);
+  // console.log(`Item atual: ${carrItemAtual}\n Item seguinte: ${carrItemProx}`);
   limpaBtnsCarrossel(target);
   carrosselBtns[target].classList.add("btn-ativo");
   carrosselItems[target].style.display = "flex";
@@ -122,7 +125,7 @@ function fadeInCarrossel(target) {
 }
 
 function fadeOutCarrossel(target) {
-  console.log(`Item atual: ${carrItemAtual}\n Item seguinte: ${carrItemProx}`);
+  // console.log(`Item atual: ${carrItemAtual}\n Item seguinte: ${carrItemProx}`);
   limpaBtnsCarrossel(target);
   carrosselBtns[target].classList.add("btn-ativo");
   limpaBgsCarrosselOut(carrItemAtual);
@@ -147,6 +150,22 @@ function toggleSobreNos(){
     sobreNosBtn.innerText = "Ler menos";
   } else {
     sobreNosBtn.innerText = "Ler mais";
+  }
+}
+
+function selecionaTabela(i) {
+  tabelaBtns.forEach(element => {
+    element.classList.remove("btn-tabela-ativo")
+  });
+  tabelaTextos.forEach(element => {
+    element.classList.remove("tabela-info-ativa")
+  });
+  tabelaBtns[i].classList.add("btn-tabela-ativo");
+  tabelaTextos[i].classList.add("tabela-info-ativa");
+  if(i === 1){
+    tabelaUl.classList.add("tabela-ul-ativa");
+  } else {
+    tabelaUl.classList.remove("tabela-ul-ativa");
   }
 }
 
@@ -178,3 +197,9 @@ navHambClose.addEventListener("click", () => {
 sobreNosBtn.addEventListener("click", ()=> {
   toggleSobreNos();
 })
+
+for (let i = 0; i < tabelaBtns.length; i++){
+  tabelaBtns[i].addEventListener("click", ()=> {
+    selecionaTabela(i);
+  })
+}
