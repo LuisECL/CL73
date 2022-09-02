@@ -475,6 +475,57 @@ header {
   }
 }
 
+.portfolio-modal {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 0, 0, 0.75);
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+
+.modal-img {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.close-modal {
+  position: absolute;
+  top: 0.3rem;
+  right: 1.5rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 2rem;
+}
+
+.portfolio-modal img {
+  max-width: 90%;
+  max-height: 90vh;
+  left: 50%;
+}
+
+#modal-prev, #modal-prox {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: none;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 2rem;
+}
+
+#modal-prev {
+  left: 1rem;
+}
+#modal-prox {
+  right: 1rem;
+}
+
 /* ---------------MAPS--------------- */
 
 /* ---------------FOOTER--------------- */
