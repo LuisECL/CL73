@@ -25,6 +25,8 @@ const sobreNosBtn = document.querySelector(".ler-mais");
 const tabelaBtns = document.querySelectorAll(".btn-tabela");
 const tabelaTextos = document.querySelectorAll(".tabela-info")
 const tabelaUl = document.querySelector(".tabela-ul");
+const portfolioImgs = document.querySelectorAll(".portfolio-img-container");
+const portfolioZooms = document.querySelectorAll(".img-zoom");
 
 // --------------FUNÇÕES------------------
 function aplicaBg(i, rota) {
@@ -169,6 +171,14 @@ function selecionaTabela(i) {
   }
 }
 
+function showImgZoom(i){
+  portfolioZooms[i].classList.add("img-zoom-ativo")
+};
+
+function hideImgZoom(i){
+  portfolioZooms[i].classList.remove("img-zoom-ativo")
+};
+
 // --------------EVENTOS------------------
 btnHamburguer.addEventListener("click", () => {
   mostraNavHamb();
@@ -201,5 +211,15 @@ sobreNosBtn.addEventListener("click", ()=> {
 for (let i = 0; i < tabelaBtns.length; i++){
   tabelaBtns[i].addEventListener("click", ()=> {
     selecionaTabela(i);
+  })
+}
+
+for (let i = 0; i < portfolioImgs.length; i++){
+  portfolioImgs[i].addEventListener("mouseover", ()=> {
+    showImgZoom(i);
+  });
+
+  portfolioImgs[i].addEventListener("mouseout", ()=> {
+    hideImgZoom(i);
   })
 }
