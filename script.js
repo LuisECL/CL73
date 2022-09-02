@@ -27,6 +27,11 @@ const tabelaTextos = document.querySelectorAll(".tabela-info")
 const tabelaUl = document.querySelector(".tabela-ul");
 const portfolioImgs = document.querySelectorAll(".portfolio-img-container");
 const portfolioZooms = document.querySelectorAll(".img-zoom");
+const portfolioModal = document.querySelector(".portfolio-modal")
+const imagemModal = document.getElementById("imagem-modal");
+const fechaModal = document.querySelector(".close-modal")
+const modalPrev = document.getElementById("modal-prev");
+const modalProx = document.getElementById("modal-prox");
 
 // --------------FUNÇÕES------------------
 function aplicaBg(i, rota) {
@@ -180,6 +185,31 @@ function hideImgZoom(i){
   portfolioZooms[i].classList.remove("img-zoom-ativo")
 };
 
+function mostraImgPortfolio(i){
+  if(i === 0){
+    modalPrev.style.display = "none"
+  } else if (i === 3){
+    modalProx.style.display = "none"
+  } else {
+    modalPrev.style.display = "block"
+    modalProx.style.display = "block"
+  }
+  let imagemClicada = `0${i + 1}-1000w.jpg`
+  imagemModal.src = `img/portfolio/portfolio${imagemClicada}`
+  portfolioModal.style.display = "flex";
+};
+
+function avancaImgModal(){
+  let imagemSeguinte = Number(imagemModal.src.slice(-11, -10));
+  mostraImgPortfolio(imagemSeguinte);
+}
+
+function voltaImgModal(){
+  let imagemSeguinte = Number(imagemModal.src.slice(-11, -10));
+  let imagemAnterior = imagemSeguinte - 2;
+  mostraImgPortfolio(imagemAnterior);
+}
+
 // --------------EVENTOS------------------
 btnHamburguer.addEventListener("click", () => {
   mostraNavHamb();
@@ -222,5 +252,21 @@ for (let i = 0; i < portfolioImgs.length; i++){
 
   portfolioImgs[i].addEventListener("mouseout", ()=> {
     hideImgZoom(i);
-  })
+  });
+
+  portfolioImgs[i].addEventListener("click", ()=> {
+    mostraImgPortfolio(i);
+  });
 }
+
+fechaModal.addEventListener("click", ()=> {
+  portfolioModal.style.display = "none";
+});
+
+modalPrev.addEventListener("click", ()=> {
+  voltaImgModal();
+});
+
+modalProx.addEventListener("click", ()=> {
+  avancaImgModal();
+})
