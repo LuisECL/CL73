@@ -228,15 +228,15 @@ header {
   font-size: 2rem;
 }
 
-.sobre-nos-container p {
+.sobre-nos-texto {
   margin: 1rem 0;
   max-height: 60px;
   overflow: hidden;
   transition: max-height .5s ease-in-out;
 }
 
-.sobre-nos-container p:hover {
-  max-height: 100px;
+.sobre-nos-texto-ativo {
+  max-height: 200px;
 }
 
 .sobre-nos-container button {

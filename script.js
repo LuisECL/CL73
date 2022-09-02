@@ -20,6 +20,8 @@ const carrosselData = {
     bg: "05.produto-2000w.jpg",
   },
 };
+const sobreNosTexto = document.querySelector(".sobre-nos-container p");
+const sobreNosBtn = document.querySelector(".sobre-nos-container button");
 
 function aplicaBg(i, rota) {
   carrosselItems[i - 1].style.backgroundImage = `url(img/carrossel/${rota})`;
@@ -137,6 +139,11 @@ setTimeout(() => {
   fadeInCarrossel(1);
 }, 5000);
 
+function toggleSobreNos(){
+  console.log("Clickou no botão");
+  sobreNosTexto.classList.toggle("sobre-nos-texto-ativo");
+}
+
 // --------------EVENTOS------------------
 btnHamburguer.addEventListener("click", () => {
   mostraNavHamb();
@@ -161,3 +168,8 @@ navHambClose.addEventListener("click", () => {
 //     }
 //   });
 // }
+
+console.log(sobreNosTexto);
+sobreNosBtn.addEventListener("click", ()=> {
+  toggleSobreNos();
+})
