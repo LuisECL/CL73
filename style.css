@@ -362,6 +362,11 @@ header {
 }
 
 /* ------------TEXTO GENÉRICO------------ */
+.texto-generico {
+  margin: 1rem;
+  font-family: 'Lato', sans-serif;
+  color: #334E58;
+}
 
 /* ---------------PORTFÓLIO--------------- */
 
