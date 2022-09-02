@@ -172,7 +172,8 @@ function selecionaTabela(i) {
 }
 
 function showImgZoom(i){
-  portfolioZooms[i].classList.add("img-zoom-ativo")
+  portfolioZooms[i].classList.add("img-zoom-ativo");
+  portfolioZooms[i].style.animation = "showZoomBg .3s 1"
 };
 
 function hideImgZoom(i){
