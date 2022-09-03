@@ -573,3 +573,25 @@ footer i {
   margin-right: 0.3rem;
   font-size: 1.5rem;
 }
+
+#credits {
+  display: flex;
+  align-items: center;
+  font-size: small;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+.fa-copyright {
+  font-size: small;
+}
+
+#credits ul {
+  display: flex;
+  margin-left: auto;
+}
+
+#credits li {
+  margin: 0 4px;
+}
