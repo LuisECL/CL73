@@ -1,6 +1,14 @@
+// DOM: NAVBAR ------------------------------
 const navHamburguer = document.querySelector(".nav-hamburguer");
 const btnHamburguer = document.querySelector(".btn-hamburguer");
 const navHambClose = document.querySelector(".nav-hamb-close");
+const navBtns = document.querySelectorAll(".nav-btn");
+const secaoSobreNos = document.getElementById("sobre-nos");
+const secaoComentarios = document.getElementById("comentarios");
+const secaoPortfolio = document.getElementById("portfolio");
+const secaoLocalizacao = document.getElementById("localizacao");
+const secoes = [secaoSobreNos, secaoComentarios, secaoPortfolio, secaoLocalizacao]
+// DOM: CARROSSEL ------------------------------
 const carrosselItems = document.querySelectorAll(".carrossel-item");
 const carrosselBtns = document.querySelectorAll(".carrossel-btn button");
 const carrosselData = {
@@ -20,11 +28,14 @@ const carrosselData = {
     bg: "05.produto-2000w.jpg",
   },
 };
+// DOM: SOBRE NÓS -----------------------------
 const sobreNosTexto = document.querySelector(".sobre-nos-container p");
 const sobreNosBtn = document.querySelector(".ler-mais");
+// DOM: TABELA ------------------------------
 const tabelaBtns = document.querySelectorAll(".btn-tabela");
 const tabelaTextos = document.querySelectorAll(".tabela-info")
 const tabelaUl = document.querySelector(".tabela-ul");
+// DOM: PORTFÓLIO ------------------------------
 const portfolioImgs = document.querySelectorAll(".portfolio-img-container");
 const portfolioZooms = document.querySelectorAll(".img-zoom");
 const portfolioModal = document.querySelector(".portfolio-modal")
@@ -63,7 +74,7 @@ function escondeNavHamb() {
   navHamburguer.style.animation = "nav-hamburguer-out .5s 1";
   setTimeout(() => {
     navHamburguer.style.display = "none";
-  }, 500);
+  }, 400);
 }
 
 function mostraNavHamb() {
@@ -270,3 +281,18 @@ modalPrev.addEventListener("click", ()=> {
 modalProx.addEventListener("click", ()=> {
   avancaImgModal();
 })
+
+navBtns.forEach(btn => {
+  btn.addEventListener("click", ()=> {
+    escondeNavHamb();
+  })
+});
+
+for (let i = 0; i < navBtns.length; i++){
+  navBtns[i].addEventListener("click", (e)=> {
+    e.preventDefault();
+    secoes[i].scrollIntoView({
+      behavior: "smooth"
+    })
+  })
+};
