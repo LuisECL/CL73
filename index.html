@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="media-queries.css">
   <script src="https://kit.fontawesome.com/a7717bed62.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,10 +33,26 @@
       <img src="img/logo-branco.png" alt="logo" class="logo-header">
       <nav class="nav-extenso">
         <ul>
-          <li><a href="">Sobre nós</a></li>
-          <li><a href="">Comentários</a></li>
-          <li><a href="">Portfólio</a></li>
-          <li><a href="">Localização</a></li>
+          <li>
+            <a class="nav-btn" href="#sobre-nos">
+              Sobre nós
+            </a>
+          </li>
+          <li>
+            <a class="nav-btn" href="#comentarios">
+            Comentários
+          </a>
+        </li>
+          <li>
+            <a class="nav-btn" href="#portfolio">
+              Portfólio
+            </a>
+          </li>
+          <li>
+            <a class="nav-btn" href="#localizacao">
+              Localização
+            </a>
+          </li>
         </ul>
       </nav>
       <button class="btn-hamburguer">
@@ -106,52 +123,54 @@
       <li class="carrossel-btn"><button></button></li>
     </ul>
   </div>
-  <div id="sobre-nos" class="sobre-nos-container">
-    <h2>
-      Sobre nós
-    </h2>
-    <p class="sobre-nos-texto">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga nobis eius quo praesentium accusantium ducimus
-      assumenda pariatur dolorem deserunt optio. Nobis consequatur ea error recusandae ad pariatur. Modi, exercitationem
-      necessitatibus facilis dolor deleniti itaque! Minima, nisi? Minus deserunt maxime commodi id deleniti, quaerat,
-      mollitia iure sunt labore itaque quis molestias.
-    </p>
-    <button class="ler-mais">
-      Ler mais
-    </button>
-  </div>
-  <div class="tabela-container">
-    <div id="btn-tabela-container">
-      <button class="btn-tabela btn-tabela-ativo">
-        Fornecedores
-      </button>
-      <button class="btn-tabela">
-        Clientes
-      </button>
-      <button class="btn-tabela">
-        Prêmios
+  <div class="sobre-nos-e-tabela">
+    <div id="sobre-nos" class="sobre-nos-container">
+      <h2>
+        Sobre nós
+      </h2>
+      <p class="sobre-nos-texto">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga nobis eius quo praesentium accusantium ducimus
+        assumenda pariatur dolorem deserunt optio. Nobis consequatur ea error recusandae ad pariatur. Modi, exercitationem
+        necessitatibus facilis dolor deleniti itaque! Minima, nisi? Minus deserunt maxime commodi id deleniti, quaerat,
+        mollitia iure sunt labore itaque quis molestias.
+      </p>
+      <button class="ler-mais">
+        Ler mais
       </button>
     </div>
-    <p class="tabela-info tabela-info-ativa">
-      Info sobre os fornecedores Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non deleniti laboriosam sit
-      neque nam provident omnis eaque quibusdam, reiciendis tempore.
-    </p>
-    <p class="tabela-info">
-      Alguns dos nossos clientes Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quia ipsa assumenda.
-      Fugiat, cumque ut.
-    <ul class="tabela-ul">
-      <li>Fornecedor 01</li>
-      <li>Fornecedor 02</li>
-      <li>Fornecedor 03</li>
-      <li>Fornecedor 04</li>
-      <li>Fornecedor 05</li>
-    </ul>
-    </p>
-    <p class="tabela-info">
-      Todos os prêmios que já ganhamos Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat modi quam minus
-      nostrum quas nulla corrupti ipsam et consequuntur quaerat dolorum atque, veritatis illo totam repudiandae
-      accusantium in, quod illum.
-    </p>
+    <div class="tabela-container">
+      <div id="btn-tabela-container">
+        <button class="btn-tabela btn-tabela-ativo">
+          Fornecedores
+        </button>
+        <button class="btn-tabela">
+          Clientes
+        </button>
+        <button class="btn-tabela">
+          Prêmios
+        </button>
+      </div>
+      <p class="tabela-info tabela-info-ativa">
+        Info sobre os fornecedores Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non deleniti laboriosam sit
+        neque nam provident omnis eaque quibusdam, reiciendis tempore.
+      </p>
+      <p class="tabela-info">
+        Alguns dos nossos clientes Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quia ipsa assumenda.
+        Fugiat, cumque ut.
+      <ul class="tabela-ul">
+        <li>Fornecedor 01</li>
+        <li>Fornecedor 02</li>
+        <li>Fornecedor 03</li>
+        <li>Fornecedor 04</li>
+        <li>Fornecedor 05</li>
+      </ul>
+      </p>
+      <p class="tabela-info">
+        Todos os prêmios que já ganhamos Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat modi quam minus
+        nostrum quas nulla corrupti ipsam et consequuntur quaerat dolorum atque, veritatis illo totam repudiandae
+        accusantium in, quod illum.
+      </p>
+    </div>
   </div>
   <div id="comentarios" class="comentarios-bg">
     <div class="comentarios-container">
@@ -261,23 +280,35 @@
       <div class="footer-column">
         <h3>Navegação</h3>
         <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">Portfólio</a></li>
-          <li><a href="">Contato</a></li>
+          <li>
+            <a class="nav-btn" href="">
+            Home
+          </a>
+        </li>
+          <li>
+            <a class="nav-btn" href="">
+              Portfólio
+            </a>
+          </li>
+          <li>
+            <a class="nav-btn" href="">
+              Contato
+            </a>
+          </li>
         </ul>
       </div>
       <div class="footer-column">
         <h3>Nos siga</h3>
         <ul>
-          <li><a href="">
+          <li><a class="nav-btn"  href="">
               <i class="fa-brands fa-square-facebook"></i>
               Facebook
             </a></li>
-          <li><a href="">
+          <li><a class="nav-btn"  href="">
               <i class="fa-brands fa-instagram"></i>
               Instagram
             </a></li>
-          <li><a href="">
+          <li><a class="nav-btn"  href="">
               <i class="fa-brands fa-linkedin"></i>
               Linkedin
             </a></li>
@@ -286,13 +317,13 @@
       <div class="footer-column">
         <h3>Localização</h3>
         <ul>
-          <li><a href="">
+          <li><a class="nav-btn"  href="">
               <i class="fa-solid fa-house"></i>
               Endereço</a></li>
-          <li><a href="">
+          <li><a class="nav-btn"  href="">
               <i class="fa-brands fa-whatsapp"></i>
               Telefone</a></li>
-          <li><a href="">
+          <li><a class="nav-btn"  href="">
               <i class="fa-regular fa-envelope"></i>
               Email</a></li>
         </ul>

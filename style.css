@@ -527,6 +527,9 @@ header {
 }
 
 /* ---------------MAPS--------------- */
+#localizacao {
+  margin-top: 2rem;
+}
 
 /* ---------------FOOTER--------------- */
 footer {
