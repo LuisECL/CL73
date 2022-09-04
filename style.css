@@ -358,6 +358,23 @@ header {
   margin-bottom: 1rem;
 }
 
+
+.comentarios-todo ::-webkit-scrollbar {
+  width: 0px;
+}
+
+.comentarios-todo ::-webkit-scrollbar:horizontal{
+  height: 0px;
+}
+
+.comentario ::-webkit-scrollbar {
+  width: 2px;
+}
+
+.comentario ::-webkit-scrollbar:horizontal {
+  height: 0px;
+}
+
 .estrelas {
   margin-bottom: 1rem;
 }
