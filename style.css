@@ -359,6 +359,14 @@ header {
 }
 
 
+.comentarios-container ::-webkit-scrollbar {
+  width: 0px;
+}
+
+.comentarios-container ::-webkit-scrollbar:horizontal{
+  height: 0px;
+}
+
 .comentarios-todo ::-webkit-scrollbar {
   width: 0px;
 }
