@@ -359,11 +359,11 @@ header {
 }
 
 
-.comentarios-container ::-webkit-scrollbar {
+#comentarios ::-webkit-scrollbar {
   width: 0px;
 }
 
-.comentarios-container ::-webkit-scrollbar:horizontal{
+#comentarios ::-webkit-scrollbar:horizontal{
   height: 0px;
 }
 
