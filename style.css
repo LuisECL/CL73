@@ -322,7 +322,10 @@ header {
 }
 
 .comentarios-container {
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
   background-color: rgba(0, 0, 0, 0.25);
   color: #d2d7df;
   font-family: "Merriweather", serif;
