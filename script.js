@@ -2,6 +2,7 @@
 const navHamburguer = document.querySelector(".nav-hamburguer");
 const btnHamburguer = document.querySelector(".btn-hamburguer");
 const navHambClose = document.querySelector(".nav-hamb-close");
+const hambBtns =document.querySelectorAll(".hamb-btn"); 
 const navBtns = document.querySelectorAll(".nav-btn");
 const secaoSobreNos = document.getElementById("sobre-nos");
 const secaoComentarios = document.getElementById("comentarios");
@@ -296,3 +297,12 @@ for (let i = 0; i < navBtns.length; i++){
     })
   })
 };
+
+hambBtns.forEach((btn, index) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    secoes[index].scrollIntoView({
+      behavior: "smooth"
+    })
+  })
+});
