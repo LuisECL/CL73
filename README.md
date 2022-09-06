@@ -20,10 +20,14 @@ A versão mais recente foi publicada usando GitHub Pages. Sinta-se à vontade pa
 
 ## Features
 O projeto inclui:
-- Carrossel que muda de imagens automáticamente
-- Barra de navegação com scroll às diferentes seções da página
-- Botão de 'Ler Mais' para exibir ou ocultar informações na seção Sobre Nós
-- Tabela com botões para alternar entre informações segundo categoría
-- Seção de comentários com scroll manual (visualação Mobile ou Tablet)
-- Galeria de imagens com modal e botões de navegação
-- Conexão com API da Google Maps (Atualmente não funcionando devido à chave usada não estar associada a uma conta paga)
+- **Carrossel** que muda de imagens automáticamente
+- Barra de navegação com **scroll suave** às diferentes seções da página
+- Botão de **'Ler Mais'** para exibir ou ocultar informações na seção Sobre Nós
+- **Tabela** com botões para alternar entre informações segundo categoría
+- Seção de comentários com **scroll manual** (visualação Mobile)
+- **Galeria de imagens** com modal e botões de navegação
+- Conexão com *API da Google Maps* (Atualmente não funcionando devido à chave usada não estar associada a uma conta paga)
+
+<img src="img/01.carrossel_menuHamburguer.jpg">
+<img src="img/02.sobreNos_tabela_comentários.jpg">
+<img src="img/03.galeria_googleMaps.jpg">
