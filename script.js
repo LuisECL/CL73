@@ -47,7 +47,7 @@ const portfolioImgs = document.querySelectorAll(".portfolio-img-container");
 const portfolioZooms = document.querySelectorAll(".img-zoom");
 const portfolioModal = document.querySelector(".portfolio-modal")
 const imagemModal = document.getElementById("imagem-modal");
-const fechaModal = document.querySelector(".close-modal")
+const fechaModalPortfolio = document.querySelector(".close-modal-portfolio")
 const modalPrev = document.getElementById("modal-prev");
 const modalProx = document.getElementById("modal-prox");
 
@@ -309,7 +309,7 @@ for (let i = 0; i < portfolioImgs.length; i++){
   });
 }
 
-fechaModal.addEventListener("click", ()=> {
+fechaModalPortfolio.addEventListener("click", ()=> {
   portfolioModal.style.display = "none";
 });
 

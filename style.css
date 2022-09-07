@@ -590,7 +590,7 @@ header {
   justify-content: center;
 }
 
-.close-modal {
+.close-modal-portfolio {
   position: absolute;
   top: 0.3rem;
   right: 1.5rem;
