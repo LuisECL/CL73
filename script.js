@@ -263,14 +263,12 @@ navHambClose.addEventListener("click", () => {
 // }
 
 carrosselContatoBtns.forEach(btn => {
-  console.log(btn);
-  btn.addEventListener("mouseover", ()=> {
-    console.log("Passou por aqui");
+  btn.addEventListener("click", ()=> {
+    contatoModal.style.display = "block"
   })
 })
 
 fechaModalContato.addEventListener("click", () => {
-  console.log("Fechando o modal de contato");
   contatoModal.style.display = "none";
 })
 

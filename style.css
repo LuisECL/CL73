@@ -107,7 +107,7 @@ header {
 /* -------------CONTATO-MODAL------------- */
 .contato-modal {
   position: fixed;
-  /* display: none; */
+  display: none;
   align-items: center;
   justify-content: center;
   background-color: rgb(0, 0, 0, 0.75);
@@ -240,14 +240,6 @@ header {
 .btn-contato:hover {
   background: rgb(0, 0, 0, 0.6);
   cursor: pointer;
-}
-
-#carr-item01,
-#carr-item02,
-#carr-item03,
-#carr-item04,
-#carr-item05 {
-  z-index: -1;
 }
 
 #carr-item02,
