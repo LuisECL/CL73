@@ -339,7 +339,7 @@ header {
 }
 
 .comentarios-todos {
-  width: 100%;
+  width: auto;
   display: flex;
   overflow: scroll;
 }
@@ -359,28 +359,26 @@ header {
 }
 
 
-#comentarios ::-webkit-scrollbar {
-  width: 0px;
+.comentarios-container ::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
 }
 
-#comentarios ::-webkit-scrollbar:horizontal{
-  height: 0px;
+.comentarios-container ::-webkit-scrollbar-track {
+  background: none;
 }
 
-.comentarios-todo ::-webkit-scrollbar {
-  width: 0px;
+.comentarios-container ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.75)
 }
 
-.comentarios-todo ::-webkit-scrollbar:horizontal{
-  height: 0px;
+
+.comentarios-container ::-webkit-scrollbar-corner {
+  background: none;
 }
 
-.comentario ::-webkit-scrollbar {
-  width: 2px;
-}
-
-.comentario ::-webkit-scrollbar:horizontal {
-  height: 0px;
+.comentario p::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.25);
 }
 
 .estrelas {
