@@ -104,6 +104,84 @@ header {
   display: none;
 }
 
+/* -------------CONTATO-MODAL------------- */
+.contato-modal {
+  position: fixed;
+  /* display: none; */
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 0, 0, 0.75);
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+
+.modal-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(300px, 90vw, 540px);
+  padding: 1rem;
+  background-color: #3c0000;
+  color: #f5f5f5;
+  font-family: 'Lato', sans-serif;
+}
+
+.modal-container h3 {
+  margin: 0.8rem 0;
+  font-size: 2rem;
+}
+
+.close-modal-contato {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.close-modal-contato:hover {
+  color: #f5f5f5;
+  }
+
+.modal-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 1rem;
+  min-height: 300px;
+}
+
+.modal-container input {
+  padding: 0.5rem;
+}
+
+.modal-container textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.modal-container form button {
+  margin: 1rem auto;
+  margin-bottom: 0;
+  width: 60%;
+  padding: 0.5rem;
+  background: none;
+  border: solid #774936;
+  color: #774936;
+  font-size: 1.2rem;
+  transition: all .3s;
+}
+
+.modal-container form button:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: solid rgba(0, 0, 0, 0%);
+  color: #f5f5f5;
+}
 /* ---------------CARROSSEL--------------- */
 .carrossel-container {
   height: 400px;
