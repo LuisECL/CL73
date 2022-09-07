@@ -272,6 +272,14 @@ fechaModalContato.addEventListener("click", () => {
   contatoModal.style.display = "none";
 })
 
+document.addEventListener("keydown", (e)=> {
+  const keyName = e.key;
+  if (keyName === "Escape"){
+    contatoModal.style.display = "none";
+    portfolioModal.style.display = "none";
+  }
+})
+
 submit.addEventListener("click", (e)=> {
   e.preventDefault();
   submitContato();

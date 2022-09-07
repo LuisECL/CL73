@@ -122,7 +122,8 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   width: clamp(300px, 90vw, 540px);
-  padding: 1rem;
+  padding: 1.5rem;
+  border-radius: 16px;
   background-color: #3c0000;
   color: #f5f5f5;
   font-family: 'Lato', sans-serif;
