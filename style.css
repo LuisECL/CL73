@@ -146,7 +146,7 @@ header {
 
 .close-modal-contato:hover {
   color: #f5f5f5;
-  }
+}
 
 .modal-container form {
   display: flex;
@@ -591,11 +591,17 @@ header {
 }
 
 .close-modal-portfolio {
+  cursor: pointer;
   position: absolute;
-  top: 0.3rem;
-  right: 1.5rem;
+  top: 2%;
+  right: 6%;
   color: rgba(255, 255, 255, 0.75);
   font-size: 2rem;
+  transition: all .3s;
+}
+
+.close-modal-portfolio:hover {
+  color: #f5f5f5;
 }
 
 .portfolio-modal img {
@@ -615,13 +621,19 @@ header {
   transform: translateY(-50%);
   color: rgba(255, 255, 255, 0.75);
   font-size: 2rem;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+#modal-prev:hover, #modal-prox:hover {
+  color: #f5f5f5;
 }
 
 #modal-prev {
-  left: 1rem;
+  left: 5%;
 }
 #modal-prox {
-  right: 1rem;
+  right: 5%;
 }
 
 /* ---------------MAPS--------------- */
