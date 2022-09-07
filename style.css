@@ -351,11 +351,18 @@ header {
   color: #d2d7df;
   font-size: 1.5rem;
   font-weight: 600;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.btn-tabela:not(.btn-tabela-ativo):hover {
+  background-color: #10262e;
 }
 
 .btn-tabela-ativo {
   background-color: #fff;
   color: #334e58;
+  cursor: auto;
 }
 
 .tabela-info {
