@@ -2,15 +2,21 @@
 const navHamburguer = document.querySelector(".nav-hamburguer");
 const btnHamburguer = document.querySelector(".btn-hamburguer");
 const navHambClose = document.querySelector(".nav-hamb-close");
-const hambBtns =document.querySelectorAll(".hamb-btn"); 
+const hambBtns =document.querySelectorAll(".hamb-btn");
 const navBtns = document.querySelectorAll(".nav-btn");
 const secaoSobreNos = document.getElementById("sobre-nos");
 const secaoComentarios = document.getElementById("comentarios");
 const secaoPortfolio = document.getElementById("portfolio");
 const secaoLocalizacao = document.getElementById("localizacao");
 const secoes = [secaoSobreNos, secaoComentarios, secaoPortfolio, secaoLocalizacao]
+// DOM: MODAL CONTATO ------------------------------
+const contatoModal = document.querySelector(".contato-modal");
+const modalContatoInfo = document.querySelector(".modal-contato-info");
+const fechaModalContato = document.querySelector(".close-modal-contato");
+const submit = document.querySelector(".modal-container form button");
 // DOM: CARROSSEL ------------------------------
 const carrosselItems = document.querySelectorAll(".carrossel-item");
+const carrosselContatoBtns = document.querySelectorAll(".btn-contato");
 const carrosselBtns = document.querySelectorAll(".carrossel-btn button");
 const carrosselData = {
   item01: {
@@ -81,6 +87,15 @@ function escondeNavHamb() {
 function mostraNavHamb() {
   navHamburguer.style.display = "block";
   navHamburguer.style.animation = "nav-hamburguer-in .5s 1";
+}
+
+function submitContato() {
+  modalContatoInfo.innerHTML =
+  `<h3>Obrigado!</h3>
+  <p style="margin-bottom: 1rem">
+    Nossa equipe entrará em contato com você em breve.
+  </p>
+</div>`
 }
 
 let carrItemAtual = 0;
@@ -246,6 +261,23 @@ navHambClose.addEventListener("click", () => {
 //     }
 //   });
 // }
+
+carrosselContatoBtns.forEach(btn => {
+  console.log(btn);
+  btn.addEventListener("mouseover", ()=> {
+    console.log("Passou por aqui");
+  })
+})
+
+fechaModalContato.addEventListener("click", () => {
+  console.log("Fechando o modal de contato");
+  contatoModal.style.display = "none";
+})
+
+submit.addEventListener("click", (e)=> {
+  e.preventDefault();
+  submitContato();
+})
 
 sobreNosBtn.addEventListener("click", ()=> {
   toggleSobreNos();
